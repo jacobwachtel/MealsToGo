@@ -1,8 +1,21 @@
 import { StyleSheet, View } from "react-native";
 import React from "react";
 import { Button, Card, Text } from "react-native-paper";
+import styled from "styled-components/native";
 
-const RestaurantInfo = ({ restaurant }) => {
+const RestaurantCard = styled(Card)`
+  padding: 8px;
+  background-color: white;
+`;
+
+const RestaurantCardCover = styled(Card.Cover)``;
+
+const Title = styled.Text`
+  padding: 16px 0;
+  color: black;
+`;
+
+const RestaurantInfoCard = ({ restaurant }) => {
   //   const {
   //     name = "some restaurant",
   //     icon,
@@ -16,31 +29,16 @@ const RestaurantInfo = ({ restaurant }) => {
   //   } = restaurant;
 
   return (
-    <Card elevation={5} style={styles.container}>
-      <Card.Cover
-        style={styles.cardCover}
+    <RestaurantCard elevation={5}>
+      <RestaurantCardCover
         source={{
           uri: "https://www.foodiesfeed.com/wp-content/uploads/2023/09/fresh-vegetables.jpg",
         }}
       />
 
-      <Text style={styles.cardContent} variant="titleMedium">
-        Some Restaurant
-      </Text>
-    </Card>
+      <Title variant="titleMedium">Some Restaurant</Title>
+    </RestaurantCard>
   );
 };
 
-export default RestaurantInfo;
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 12,
-  },
-  cardCover: {},
-  cardContent: {
-    padding: 0,
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-  },
-});
+export default RestaurantInfoCard;
