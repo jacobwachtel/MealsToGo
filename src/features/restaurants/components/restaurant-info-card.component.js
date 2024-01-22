@@ -2,6 +2,9 @@ import { StyleSheet, View } from "react-native";
 import React from "react";
 import { Button, Card, Text } from "react-native-paper";
 import styled from "styled-components/native";
+import { SvgXml } from "react-native-svg";
+
+import star from "../../../../assets/star";
 
 const RestaurantCard = styled(Card)`
   padding: ${(props) => props.theme.space[2]};
@@ -16,7 +19,7 @@ const Info = styled.View`
 
 const Title = styled.Text`
   color: ${(props) => props.theme.colors.ui.primary};
-  font-family: ${(props) => props.theme.fonts.heading};
+  font-family: ${(props) => props.theme.fonts.body};
   font-size: ${(props) => props.theme.fontSizes.title};
   line-height: ${(props) => props.theme.lineHeights.title};
 `;
@@ -50,6 +53,7 @@ const RestaurantInfoCard = ({ restaurant }) => {
       />
       <Info>
         <Title variant="titleMedium">Some Restaurant</Title>
+        <SvgXml xml={star} width={20} height={20} />;
         <Address>123 ABC St. Winona Lake, IN 46590</Address>
       </Info>
     </RestaurantCard>
